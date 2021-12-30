@@ -1,0 +1,75 @@
+@import './src/assets/styles/variables';
+@import './src/assets/styles/mixins';
+
+.repo-card {
+  border:  $border;
+  display: flex;
+  padding: 16px;
+
+  .left {
+    display:        flex;
+    flex-direction: column;
+
+    .name {
+      color:           $link-color;
+      font-size:       rem-calc(20);
+      text-decoration: none;
+
+      p {
+        align-items: flex-end;
+        display:     flex;
+        font-weight: 400;
+      }
+
+      .book {
+        margin-right: 4px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .description {
+      color:      $text-white-secondary;
+      font-size:  rem-calc(14);
+      margin:     10px 0 13px;
+      text-align: left;
+    }
+
+    .meta {
+      display:    flex;
+      text-align: left;
+
+      .meta-item {
+        color:        $text-white-secondary;
+        display:      flex;
+        font-size:    rem-calc(12);
+        margin-right: 16px;
+
+        .built-by {
+          margin-right: 3px;
+        }
+
+        .svg-icon {
+          margin-right: 4px;
+        }
+
+        &.hoverable {
+          &:hover {
+            color:  $active-link;
+            cursor: pointer;
+
+            .svg-icon {
+              fill: $active-link;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+
+  }
+}

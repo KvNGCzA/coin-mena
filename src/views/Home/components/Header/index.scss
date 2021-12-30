@@ -1,0 +1,26 @@
+@import './src/assets/styles/variables';
+@import './src/assets/styles/mixins';
+
+.header {
+  align-items:      center;
+  background-color: $background;
+  border-bottom:    $border;
+  display:          flex;
+  flex-direction:   column;
+  height:           163px;
+  justify-content:  center;
+  margin-bottom:    40px;
+
+  h1 {
+    color:          $text-white-primary;
+    font-size:      rem-calc(32);
+    font-weight:    600;
+    margin-bottom:  10px;
+    text-transform: capitalize;
+  }
+
+  p {
+    color:     $text-white-secondary;
+    font-size: rem-calc(16);
+  }
+}
