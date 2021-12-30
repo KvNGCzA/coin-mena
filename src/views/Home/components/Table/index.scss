@@ -47,5 +47,14 @@
 
   .svg-icon {
     fill: $text-white-secondary;
+
+    &.heart {
+      fill: $heart-color;
+
+      &:hover {
+        height: 18px;
+        width:  18px;
+      }
+    }
   }
 }
