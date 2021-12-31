@@ -34,11 +34,13 @@
 
         &:first-child {
           border-bottom-left-radius: 6px;
+          border-right:              0;
           border-top-left-radius:    6px;
         }
 
         &:last-child {
           border-bottom-right-radius: 6px;
+          border-left:                0;
           border-top-right-radius:    6px;
         }
       }

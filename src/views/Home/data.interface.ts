@@ -18,8 +18,9 @@ export interface RepoData {
 
 export interface DevData {
   avatar: string;
+  index?: number;
   name: string;
-  'repo': {
+  repo: {
     name: string;
     description: string;
     url: string;

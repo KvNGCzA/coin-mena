@@ -1,16 +1,19 @@
+import {CSSProperties} from 'react';
 import './index.scss';
 
-export const Avatar = ({avatar, username}: {
-  href: string;
+export const Avatar = ({avatar, username, hasPopOver, styles}: {
   avatar: string;
   username: string;
-}) =>
+  hasPopOver?: boolean;
+  styles?: CSSProperties
+}): JSX.Element =>
   <div
     className="avatar"
     style={{
+      ...styles,
       backgroundImage: `url('${avatar}')`
     }}>
-    <div className="popover">
+    {hasPopOver ? <div className="popover">
       <div className="arrow-down">
         <div className="arrow-down-inner" />
       </div>
@@ -26,5 +29,5 @@ export const Avatar = ({avatar, username}: {
         </p>
         <span></span>
       </div>
-    </div>
+    </div> : null}
   </div>;

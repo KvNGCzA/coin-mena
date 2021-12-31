@@ -1,13 +1,12 @@
 import './index.scss';
+import {Button} from '../Button';
 import {ReactComponent as Book} from '../../../../assets/icons/book.svg';
 import {ReactComponent as Fork} from '../../../../assets/icons/fork.svg';
 import {ReactComponent as Star} from '../../../../assets/icons/star.svg';
-import {ReactComponent as Heart} from '../../../../assets/icons/heart.svg';
-import {ReactComponent as ChevronDown} from '../../../../assets/icons/chevron-down.svg';
 import {Avatar} from '../Avatar';
 import {RepoData} from '../../data.interface';
 
-const Left = (data: RepoData) =>
+const Left = (data: RepoData): JSX.Element =>
   <div className="left">
     <a href={data.url} className="name">
       <p>
@@ -28,26 +27,20 @@ const Left = (data: RepoData) =>
         </span>
       <span className="meta-item">
           <span className="built-by">Built by</span>
-        {data.builtBy.map(
-          user => <Avatar {...user} key={user.username} />
+        {data.builtBy?.map(
+          user => <Avatar {...user} key={user.username} hasPopOver />
         )}
         </span>
     </div>
   </div>;
 
-const Right = (data: RepoData) =>
+const Right = (data: RepoData): JSX.Element =>
   <div className="right">
     <div className="btn-group">
-      <button>
-        <Heart className="svg-icon heart" />
-        Sponsor
-      </button>
-      <button className="star">
-        <Star className="svg-icon" />
-        Star
-        <span><ChevronDown className="svg-icon chevron-down" /></span>
-      </button>
+      <Button text="Sponsor" buttonType="sponsor" />
+      <Button text="Star" buttonType="star" />
     </div>
+
     <p className="current-period-stars">
       <Star className="svg-icon" />
       {data.currentPeriodStars?.toLocaleString()} stars today

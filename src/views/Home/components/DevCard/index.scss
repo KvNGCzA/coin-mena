@@ -1,0 +1,84 @@
+@import './src/assets/styles/variables';
+@import './src/assets/styles/mixins';
+
+.dev-card {
+  border:                $border;
+  border-top:            0;
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content:       space-between;
+  padding:               16px;
+
+  .left {
+    color:     $text-white-secondary;
+    display:   flex;
+    font-size: rem-calc(12);
+
+    .name-cont {
+      text-align: left;
+
+      .name, .username {
+        display:         block;
+        text-decoration: none;
+
+        &:hover {
+          color:           $link-color;
+          text-decoration: underline;
+        }
+      }
+
+      .name {
+        color:         $link-color;
+        font-size:     rem-calc(20);
+        font-weight:   700;
+        margin-bottom: 4px;
+      }
+
+      .username {
+        color:       $text-white-secondary;
+        font-size:   rem-calc(16);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .center {
+    text-align: left;
+
+    .flame {
+      color:     $text-white-secondary;
+      display:   flex;
+      font-size: rem-calc(12);
+
+      .flame-icon {
+        fill:         rgb(219, 109, 40);
+        margin-right: 4px;
+      }
+    }
+
+    .repo-link {
+      align-items:     center;
+      color:           $link-color;
+      display:         flex;
+      font-size:       rem-calc(16);
+      font-weight:     500;
+      margin:          10px 0;
+      text-decoration: none;
+
+      .book-icon {
+        margin-right: 4px;
+      }
+    }
+
+    .repo-description {
+      color:     $text-white-secondary;
+      display:   flex;
+      font-size: rem-calc(12);
+    }
+  }
+
+  .right {
+    display:         flex;
+    justify-content: flex-end;
+  }
+}
