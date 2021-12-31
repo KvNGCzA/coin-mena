@@ -12,6 +12,72 @@ button {
   height:          28px;
   justify-content: center;
   padding:         0 12px;
+  position:        relative;
+
+  .button-dropdown {
+    background:    $background;
+    border:        $border;
+    border-radius: 4px;
+    bottom:        -50px;
+    color:         $text-white-primary;
+    font-weight:   400;
+    height:        fit-content;
+    padding:       16px 16px 52px;
+    position:      absolute;
+    right:         0;
+    text-align:    left;
+    top:           40px;
+    z-index:       12;
+
+    .title {
+      font-size:     rem-calc(12);
+      font-weight:   700;
+      margin-bottom: 7px;
+    }
+
+    .suggested-links {
+      align-items:    flex-start;
+      display:        flex;
+      flex-direction: column;
+      list-style:     none;
+      width:          298px;
+
+      .suggested-link {
+        align-items: center;
+        display:     flex;
+        font-size:   rem-calc(14);
+        margin:      7px 0;
+
+        .icon {
+          height: auto;
+          margin: 0 7px;
+          width:  17px;
+        }
+
+        input[type='checkbox' i] {
+          background: transparent;
+
+          &::after, &::before {
+            background: transparent;
+
+          }
+        }
+      }
+    }
+
+    .create-list {
+      align-items: center;
+      border-top:  $border;
+      bottom:      0;
+      display:     flex;
+      font-size:   rem-calc(14);
+      font-weight: 700;
+      left:        0;
+      padding:     13px 16px;
+      position:    absolute;
+      width:       100%;
+    }
+  }
 
   &:hover {
     cursor: pointer;

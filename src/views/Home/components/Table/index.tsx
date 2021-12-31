@@ -1,11 +1,12 @@
 import './index.scss';
-import {NavLink, useParams} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {DevCard} from '../DevCard';
 import {RepoCard} from '../RepoCard';
 import {DevData, RepoData} from '../../data.interface';
 
 interface TableProps {
   data: RepoData[] | DevData[];
+  section: string;
   setLoading: Function;
 }
 
@@ -30,16 +31,11 @@ const TableHeader = ({setLoading}: { setLoading: Function }): JSX.Element => {
   );
 };
 
-export const Table = ({data, setLoading}: TableProps): JSX.Element => {
-  const {section} = useParams();
-
-  return (
-    <div className="table">
-      <TableHeader setLoading={setLoading} />
-      {data.map((current, index) => section === 'repositories' ?
-        <RepoCard key={current.name} {...current as RepoData} /> :
-        <DevCard key={current.name} {...current as DevData} index={index + 1} />
-      )}
-    </div>
-  );
-};
+export const Table = ({data, setLoading, section}: TableProps): JSX.Element =>
+  <div className="table">
+    <TableHeader setLoading={setLoading} />
+    {data.map((current, index) => section === 'repositories' ?
+      <RepoCard key={current.name} {...current as RepoData} /> :
+      <DevCard key={current.avatar} {...current as DevData} index={index + 1} />
+    )}
+  </div>;

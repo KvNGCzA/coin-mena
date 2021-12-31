@@ -28,6 +28,7 @@ export const Home = (): JSX.Element => {
         <Table
           data={data}
           setLoading={setLoading}
+          section={section}
         />
       }
     </div>
