@@ -1,0 +1,41 @@
+@import './src/assets/styles/variables';
+@import './src/assets/styles/mixins';
+
+.footer {
+  align-items: center;
+  border-top:  $border;
+  color:       $text-white-secondary;
+  display:     flex;
+  font-size:   rem-calc(12);
+  margin:      60px auto;
+  max-width:   980px;
+  padding-top: 40px;
+
+  .svg-icon {
+    fill:         $text-white-secondary;
+    margin-right: 8px;
+
+    &:hover {
+      cursor: pointer;
+      fill:   $text-white-primary;
+    }
+  }
+
+  .links {
+    list-style: none;
+
+    .link {
+      display: inline-block;
+      margin:  0 12px;
+
+      a {
+        color:           $link-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

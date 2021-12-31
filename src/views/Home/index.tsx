@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
+import {Footer} from './components/Footer';
 import {Table} from './components/Table';
 import {Header} from './components/Header';
 import {DevData, RepoData} from './data.interface';
@@ -31,6 +32,7 @@ export const Home = (): JSX.Element => {
           section={section}
         />
       }
+      <Footer />
     </div>
   );
 };
