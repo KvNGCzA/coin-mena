@@ -19,12 +19,14 @@ const ButtonDropdown = (): JSX.Element =>
     <ul className="suggested-links">
       {SUGGESTED_LINKS.map(link =>
         <li key={link.text} className="suggested-link">
-          <input
-            type="checkbox"
-            value={link.text}
-            name={link.text.replace(' ', '-')}
-            id={link.text.replace(' ', '-')}
-          />
+          <span className="checkbox-border">
+            <input
+              type="checkbox"
+              value={link.text}
+              name={link.text.replace(' ', '-')}
+              id={link.text.replace(' ', '-')}
+            />
+          </span>
           <img src={link.icon} className="icon" alt={link.text} />
           <label htmlFor={link.text.replace(' ', '-')}>{link.text}</label>
         </li>
@@ -59,6 +61,7 @@ export const Button = ({buttonType, text}: Props): JSX.Element => {
         <Star className="svg-icon" />
         {text}
         <span
+          className="chevron-wrapper"
           onClick={() => setShowDropdown(!showDropdown)}
         >
           <ChevronDown className="svg-icon chevron-down" />

@@ -46,20 +46,36 @@ button {
         display:     flex;
         font-size:   rem-calc(14);
         margin:      7px 0;
+        position:    relative;
+
+        .checkbox-border {
+          align-items:      center;
+          background-color: $border-color;
+          border:           1px solid $text-white-secondary;
+          border-radius:    3px;
+          display:          flex;
+          height:           13px;
+          justify-content:  center;
+          left:             0;
+          width:            13px;
+
+          input[type='checkbox'] {
+            opacity: 0;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          input[type='checkbox']:checked {
+            opacity: 1;
+          }
+        }
 
         .icon {
           height: auto;
           margin: 0 7px;
           width:  17px;
-        }
-
-        input[type='checkbox' i] {
-          background: transparent;
-
-          &::after, &::before {
-            background: transparent;
-
-          }
         }
       }
     }
@@ -99,7 +115,7 @@ button {
   &.star {
     padding: 0 0 0 12px;
 
-    span {
+    .chevron-wrapper {
       align-items:     center;
       border-left:     $border;
       display:         flex;
