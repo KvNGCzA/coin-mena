@@ -1,30 +1,23 @@
-import './index.scss';
 import {useCallback, useEffect, useState} from 'react';
-import {ReactComponent as ChevronDown} from '../../../../assets/icons/chevron-down.svg';
-import {ReactComponent as Heart} from '../../../../assets/icons/heart.svg';
-import {ReactComponent as Star} from '../../../../assets/icons/star.svg';
-import {ReactComponent as Add} from '../../../../assets/icons/add.svg';
+import './index.scss';
+import {SUGGESTED_LINKS} from './index.data';
+import {ReactComponent as ChevronDown} from '../../assets/icons/chevron-down.svg';
+import {ReactComponent as Heart} from '../../assets/icons/heart.svg';
+import {ReactComponent as Star} from '../../assets/icons/star.svg';
+import {ReactComponent as Add} from '../../assets/icons/add.svg';
 
 type ButtonType = 'sponsor' | 'regular' | 'star';
 
-const suggestedLinks = [
-  {
-    icon: 'https://github.githubassets.com/images/icons/emoji/unicode/1f52e.png',
-    text: 'Future ideas'
-  }, {
-    icon: 'https://github.githubassets.com/images/icons/emoji/unicode/1f680.png',
-    text: 'My stack'
-  }, {
-    icon: 'https://github.githubassets.com/images/icons/emoji/unicode/2728.png',
-    text: 'Inspiration'
-  }
-];
+interface Props {
+  buttonType: ButtonType;
+  text: string;
+}
 
 const ButtonDropdown = (): JSX.Element =>
   <div className="button-dropdown">
     <p className="title">Suggested lists</p>
     <ul className="suggested-links">
-      {suggestedLinks.map(link =>
+      {SUGGESTED_LINKS.map(link =>
         <li key={link.text} className="suggested-link">
           <input
             type="checkbox"
@@ -42,7 +35,7 @@ const ButtonDropdown = (): JSX.Element =>
     </div>
   </div>;
 
-export const Button = ({buttonType, text}: { buttonType: ButtonType; text: string }): JSX.Element => {
+export const Button = ({buttonType, text}: Props): JSX.Element => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
   const handleDropdown = useCallback((e: Event): void => {

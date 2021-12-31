@@ -1,12 +1,15 @@
 import {CSSProperties} from 'react';
 import './index.scss';
 
-export const Avatar = ({avatar, username, hasPopOver, styles}: {
+interface Props {
+  author?: string;
   avatar: string;
-  username: string;
   hasPopOver?: boolean;
-  styles?: CSSProperties
-}): JSX.Element =>
+  styles?: CSSProperties;
+  username: string;
+}
+
+export const Avatar = ({avatar, username, hasPopOver, styles, author}: Props): JSX.Element =>
   <div
     className="avatar"
     style={{
@@ -17,17 +20,12 @@ export const Avatar = ({avatar, username, hasPopOver, styles}: {
       <div className="arrow-down">
         <div className="arrow-down-inner" />
       </div>
-      <div
-        className="popover-avatar"
-        style={{
-          backgroundImage: `url('${avatar}')`
-        }} />
+      <div className="popover-avatar" style={{backgroundImage: `url('${avatar}')`}} />
       <div className="username-cont">
         <p>
-          <span className="fullName">chris akanmu</span>
+          <span className="fullName">{author}</span>
           <span className="username"> {username}</span>
         </p>
-        <span></span>
       </div>
     </div> : null}
   </div>;

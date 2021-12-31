@@ -1,5 +1,5 @@
-@import './src/assets/styles/variables';
-@import './src/assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
 
 .repo-card {
   border:          $border;
@@ -35,7 +35,7 @@
     .description {
       color:      $text-white-secondary;
       font-size:  rem-calc(14);
-      margin:     10px 40px 13px 0;
+      margin:     10px 70px 13px 0;
       text-align: left;
     }
 

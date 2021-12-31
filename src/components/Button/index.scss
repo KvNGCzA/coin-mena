@@ -1,11 +1,11 @@
-@import './src/assets/styles/variables';
-@import './src/assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
 
 button {
   align-items:     center;
   background:      $button-color;
   border:          $border;
-  border-radius:   4px;
+  border-radius:   6px;
   color:           $text-white-primary;
   display:         flex;
   font-weight:     bold;
@@ -17,11 +17,10 @@ button {
   .button-dropdown {
     background:    $background;
     border:        $border;
-    border-radius: 4px;
-    bottom:        -50px;
+    border-radius: 6px;
+    box-shadow:    $shadow;
     color:         $text-white-primary;
     font-weight:   400;
-    height:        fit-content;
     padding:       16px 16px 52px;
     position:      absolute;
     right:         0;
@@ -80,7 +79,9 @@ button {
   }
 
   &:hover {
-    cursor: pointer;
+    background:   $border-color;
+    border-color: $text-white-secondary;
+    cursor:       pointer;
   }
 
   &:first-child {

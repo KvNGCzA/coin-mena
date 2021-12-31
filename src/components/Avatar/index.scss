@@ -1,5 +1,5 @@
-@import './src/assets/styles/variables';
-@import './src/assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
 
 .avatar {
   background-size: contain;
@@ -15,7 +15,7 @@
     background-color: $background;
     border:           $border;
     border-radius:    6px;
-    box-shadow:       rgb(1, 4, 9) 0px 8px 24px 0px;
+    box-shadow:       $shadow;
     display:          none;
     height:           94px;
     left:             -25px;

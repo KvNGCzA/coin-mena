@@ -1,10 +1,10 @@
 import './index.scss';
 import {Button} from '../Button';
-import {ReactComponent as Book} from '../../../../assets/icons/book.svg';
-import {ReactComponent as Fork} from '../../../../assets/icons/fork.svg';
-import {ReactComponent as Star} from '../../../../assets/icons/star.svg';
+import {ReactComponent as Book} from '../../assets/icons/book.svg';
+import {ReactComponent as Fork} from '../../assets/icons/fork.svg';
+import {ReactComponent as Star} from '../../assets/icons/star.svg';
 import {Avatar} from '../Avatar';
-import {RepoData} from '../../data.interface';
+import {RepoData} from '../../views/Home/index.interface';
 
 const Left = (data: RepoData): JSX.Element =>
   <div className="left">
@@ -28,7 +28,7 @@ const Left = (data: RepoData): JSX.Element =>
       <span className="meta-item">
           <span className="built-by">Built by</span>
         {data.builtBy?.map(
-          user => <Avatar {...user} key={user.username} hasPopOver />
+          user => <Avatar {...user} author={data.author} key={user.username} hasPopOver />
         )}
         </span>
     </div>

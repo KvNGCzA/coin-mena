@@ -1,9 +1,9 @@
 import './index.scss';
 import {Button} from '../Button';
-import {ReactComponent as Book} from '../../../../assets/icons/book.svg';
-import {ReactComponent as Flame} from '../../../../assets/icons/flame.svg';
+import {ReactComponent as Book} from '../../assets/icons/book.svg';
+import {ReactComponent as Flame} from '../../assets/icons/flame.svg';
 import {Avatar} from '../Avatar';
-import {DevData} from '../../data.interface';
+import {DevData} from '../../views/Home/index.interface';
 
 const Right = (): JSX.Element =>
   <div className="right">

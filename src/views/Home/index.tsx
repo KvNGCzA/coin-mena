@@ -1,10 +1,10 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
-import {Footer} from './components/Footer';
-import {Table} from './components/Table';
-import {Header} from './components/Header';
-import {DevData, RepoData} from './data.interface';
+import {Footer} from '../../components/Footer';
+import {Table} from '../../components/Table';
+import {Header} from '../../components/Header';
+import {DevData, RepoData} from './index.interface';
 import './index.scss';
 
 export const Home = (): JSX.Element => {
@@ -24,14 +24,12 @@ export const Home = (): JSX.Element => {
   return (
     <div className="page-wrapper">
       <Header />
-      {loading ?
-        null :
-        <Table
-          data={data}
-          setLoading={setLoading}
-          section={section}
-        />
-      }
+      <Table
+        data={data}
+        setLoading={setLoading}
+        section={section}
+        loading={loading}
+      />
       <Footer />
     </div>
   );
