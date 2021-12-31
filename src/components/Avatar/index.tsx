@@ -1,21 +1,11 @@
-import {CSSProperties} from 'react';
 import './index.scss';
+import {AvatarProps} from './index.interface';
 
-interface Props {
-  author?: string;
-  avatar: string;
-  hasPopOver?: boolean;
-  styles?: CSSProperties;
-  username: string;
-}
-
-export const Avatar = ({avatar, username, hasPopOver, styles, author}: Props): JSX.Element =>
+export const Avatar = ({avatar, username, hasPopOver, styles, author}: AvatarProps): JSX.Element =>
   <div
     className="avatar"
-    style={{
-      ...styles,
-      backgroundImage: `url('${avatar}')`
-    }}>
+    style={{...styles, backgroundImage: `url('${avatar}')`}}
+  >
     {hasPopOver ? <div className="popover">
       <div className="arrow-down">
         <div className="arrow-down-inner" />

@@ -6,7 +6,8 @@ import './App.scss';
 const App = (): JSX.Element =>
   <div className="App">
     <Routes>
-      <Route path="/:section" element={<Home />} />
+      <Route path=":section" element={<Home />} />
+      <Route path="*" element={<Home />} />
     </Routes>
   </div>;
 

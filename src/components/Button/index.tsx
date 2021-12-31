@@ -1,17 +1,11 @@
 import {useCallback, useEffect, useState} from 'react';
 import './index.scss';
+import {ButtonProps} from './index.interface';
 import {SUGGESTED_LINKS} from './index.data';
 import {ReactComponent as ChevronDown} from '../../assets/icons/chevron-down.svg';
 import {ReactComponent as Heart} from '../../assets/icons/heart.svg';
 import {ReactComponent as Star} from '../../assets/icons/star.svg';
 import {ReactComponent as Add} from '../../assets/icons/add.svg';
-
-type ButtonType = 'sponsor' | 'regular' | 'star';
-
-interface Props {
-  buttonType: ButtonType;
-  text: string;
-}
 
 const ButtonDropdown = (): JSX.Element =>
   <div className="button-dropdown">
@@ -37,7 +31,7 @@ const ButtonDropdown = (): JSX.Element =>
     </div>
   </div>;
 
-export const Button = ({buttonType, text}: Props): JSX.Element => {
+export const Button = ({buttonType, text}: ButtonProps): JSX.Element => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
   const handleDropdown = useCallback((e: Event): void => {

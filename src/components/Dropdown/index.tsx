@@ -1,17 +1,8 @@
 import {MutableRefObject, useCallback, useEffect, useRef, useState} from 'react';
+import {DropdownProps} from './index.interface';
 import {ReactComponent as ChevronDown} from '../../assets/icons/chevron-down.svg';
 import {ReactComponent as Check} from '../../assets/icons/check.svg';
 import './index.scss';
-
-interface Props {
-  defaultSelected: string;
-  hasSearch?: boolean;
-  options: string[];
-  placeholder?: string;
-  subTitle?: string;
-  title: string;
-  type: string;
-}
 
 export const Dropdown = ({
   type,
@@ -21,7 +12,7 @@ export const Dropdown = ({
   placeholder,
   options,
   title
-}: Props): JSX.Element => {
+}: DropdownProps): JSX.Element => {
   const inputRef                              = useRef() as MutableRefObject<HTMLInputElement>;
   const [showDropdown, setShowDropdown]       = useState<boolean>(false);
   const [selected, setSelected]               = useState<string>(defaultSelected);

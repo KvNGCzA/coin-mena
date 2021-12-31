@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import axios from 'axios';
+import {ALLOWED_ROUTES} from './index.data';
 import {Footer} from '../../components/Footer';
 import {Table} from '../../components/Table';
 import {Header} from '../../components/Header';
@@ -8,18 +9,24 @@ import {DevData, RepoData} from './index.interface';
 import './index.scss';
 
 export const Home = (): JSX.Element => {
-  const {section = 'repositories'} = useParams();
-  const [data, setData]            = useState<RepoData[] | DevData[]>([]);
-  const [loading, setLoading]      = useState<boolean>(true);
+  const navigate              = useNavigate();
+  const {section}             = useParams();
+  const [data, setData]       = useState<RepoData[] | DevData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    axios.get(`https://private-11637-githubtrendingapi.apiary-mock.com/${section}`)
+    if (!ALLOWED_ROUTES.includes(section || '')) {
+      navigate(ALLOWED_ROUTES[0]);
+      return;
+    }
+
+    axios.get(`${process.env.REACT_APP_TRENDS_API}/${section}`)
       .then((res) => {
         setData(res.data);
         setLoading(false);
       })
       .catch(console.log);
-  }, [section]);
+  }, [section, navigate]);
 
   return (
     <div className="page-wrapper">
@@ -27,7 +34,7 @@ export const Home = (): JSX.Element => {
       <Table
         data={data}
         setLoading={setLoading}
-        section={section}
+        section={section || ''}
         loading={loading}
       />
       <Footer />

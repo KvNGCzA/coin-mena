@@ -59,14 +59,21 @@
     .repo-link {
       align-items:     center;
       color:           $link-color;
-      display:         flex;
+      display:         inline-block;
       font-size:       rem-calc(16);
       font-weight:     500;
-      margin:          10px 0;
+      margin:          6px 0;
+      max-width:       175px;
+      overflow:        hidden;
       text-decoration: none;
+      text-overflow:   ellipsis;
+      vertical-align:  top;
+      white-space:     nowrap;
 
       .book-icon {
         margin-right: 4px;
+        position:     relative;
+        top:          4px;
       }
     }
 
