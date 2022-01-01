@@ -9,6 +9,10 @@
   justify-content:       space-between;
   padding:               16px;
 
+  &:last-of-type {
+    border-radius: 0 0 6px 6px;
+  }
+
   .left {
     color:     $text-white-secondary;
     display:   flex;
@@ -74,6 +78,10 @@
         margin-right: 4px;
         position:     relative;
         top:          4px;
+      }
+
+      &:hover {
+        text-decoration: underline;
       }
     }
 

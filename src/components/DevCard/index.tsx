@@ -8,7 +8,7 @@ import {DevData} from '../../views/Home/index.interface';
 const Right = (): JSX.Element =>
   <div className="right">
     <Button text="Sponsor" buttonType="sponsor" />
-    <Button text="Follow" buttonType="regular" />
+    <Button text="Follow" />
   </div>;
 
 const Left = (data: DevData): JSX.Element =>

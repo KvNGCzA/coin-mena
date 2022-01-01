@@ -1,9 +1,6 @@
-interface Links {
-  href: string;
-  text: string;
-}
+import {FooterLinks} from './index.interface';
 
-export const LINKS: Links[] = [
+export const LINKS: FooterLinks[] = [
   {text: 'Terms', href: 'https://docs.github.com/en/github/site-policy/github-terms-of-service'},
   {text: 'Privacy', href: 'https://docs.github.com/en/github/site-policy/github-privacy-statement'},
   {text: 'Security', href: 'https://github.com/security'},

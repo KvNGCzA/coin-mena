@@ -1,7 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import {Home} from './views/Home';
-import './App.scss';
 
 const App = (): JSX.Element =>
   <div className="App">

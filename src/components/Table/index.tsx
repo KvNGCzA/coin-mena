@@ -28,14 +28,14 @@ const TableHeader = ({setLoading, section}: TableHeaderProps): JSX.Element =>
         defaultSelected="English"
         hasSearch
         subTitle="This setting can be updated in your profile settings."
-        placeholder="Filter Spoken Languages"
+        placeholder="Filter spoken languages"
         options={SPOKEN_LANGUAGES} /> : null}
       <Dropdown
         type="Language"
         title="Select a language"
         defaultSelected="Any"
         hasSearch
-        placeholder="Filter Languages"
+        placeholder="Filter languages"
         options={LANGUAGES} />
       <Dropdown
         type="Date Range"

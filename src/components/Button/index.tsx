@@ -68,7 +68,7 @@ export const Button = ({buttonType, text}: ButtonProps): JSX.Element => {
         {text}
       </button>;
     default:
-      return <button className="">
+      return <button>
         {text}
       </button>;
   }

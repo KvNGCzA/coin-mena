@@ -5,5 +5,4 @@ export const SPOKEN_LANGUAGES: string[] = [
 export const LANGUAGES: string[]        = [
   'ASP.NET', 'Blade', 'C', 'C#', 'C++', 'Dart', 'Elixir', 'Erlang', 'Gherkin', 'GraphQL', 'HTML5', 'Javascript'
 ];
-export const NO_DATA_TEXT: string       = 'It looks like we don’t have any trending repositories for your' +
-  ' choices.';
+export const NO_DATA_TEXT: string       = `It looks like we don’t have any trending repositories for your choices.`;

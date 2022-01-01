@@ -6,29 +6,28 @@
   max-width: 980px;
 
   .no-data {
-    border:                     $border;
-    border-bottom-left-radius:  6px;
-    border-bottom-right-radius: 6px;
-    border-top:                 0;
-    color:                      $text-white-secondary;
-    font-size:                  rem-calc(24);
-    font-weight:                600;
-    padding:                    32px 0;
+    border:        $border;
+    border-radius: 0 0 6px 6px;
+    border-top:    0;
+    color:         $text-white-secondary;
+    font-size:     rem-calc(24);
+    font-weight:   600;
+    padding:       32px 0;
+    text-align:    center;
 
-    i {
+    i.fa-spinner {
       font-size: 64px;
     }
   }
 
   .table-header {
-    align-items:             center;
-    background:              $background;
-    border:                  $border;
-    border-top-left-radius:  6px;
-    border-top-right-radius: 6px;
-    display:                 flex;
-    justify-content:         space-between;
-    padding:                 16px;
+    align-items:     center;
+    background:      $background;
+    border:          $border;
+    border-radius:   6px 6px 0 0;
+    display:         flex;
+    justify-content: space-between;
+    padding:         16px;
 
     .left {
       .button {
@@ -48,15 +47,13 @@
         }
 
         &:first-child {
-          border-bottom-left-radius: 6px;
-          border-right:              0;
-          border-top-left-radius:    6px;
+          border-radius: 6px 0 0 6px;
+          border-right:  0;
         }
 
         &:last-child {
-          border-bottom-right-radius: 6px;
-          border-left:                0;
-          border-top-right-radius:    6px;
+          border-left:   0;
+          border-radius: 0 6px 6px 0;
         }
       }
     }

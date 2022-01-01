@@ -1,7 +1,4 @@
-interface SuggestedLinks {
-  icon: string;
-  text: string;
-}
+import {SuggestedLinks} from './index.interface';
 
 export const SUGGESTED_LINKS: SuggestedLinks[] = [
   {

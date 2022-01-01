@@ -85,12 +85,17 @@
           color:         $text-white-primary;
           font-size:     rem-calc(14);
           font-weight:   500;
-          outline:       none !important;
+          outline:       none;
           padding:       5px 12px;
           width:         100%;
 
           &::placeholder {
             color: rgba($text-white-secondary, 0.4);
+          }
+
+          &:focus {
+            border:     $outline-border;
+            box-shadow: $outline-shadow;
           }
         }
       }
